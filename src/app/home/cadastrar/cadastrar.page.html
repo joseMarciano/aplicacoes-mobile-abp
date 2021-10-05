@@ -1,0 +1,34 @@
+<ion-content [fullscreen]="true">
+    <app-spinner *ngIf="loggingTracker"></app-spinner>
+
+    <ion-header class="header-page">
+        <ion-menu-button menu="main-menu" autoHide="false"></ion-menu-button>
+        <ion-title>Cadastrar pet</ion-title>
+    </ion-header>
+    <form>
+        <ion-grid>
+            <ion-row>
+                <ion-col>Qual o pet?</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-radio-group>
+                        <div class="radio-container">
+
+                            <div class="radio-content selected">
+                                <ion-label color="light">Cachorro</ion-label>
+                                <ion-radio  name="radio-dog" slot="start" value="dog" checked></ion-radio>
+                            </div>
+                            <div class="radio-content">
+                                <ion-label color="light">Gato</ion-label>
+                                <ion-radio name="radio-cat" id="radio-cat" slot="start" value="cat"></ion-radio>
+                            </div>
+                        </div>
+                    </ion-radio-group>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>
+<!-- <ion-menu-button menu="main-menu" autoHide="false"></ion-menu-button>
+    CADASTRAR PET -->

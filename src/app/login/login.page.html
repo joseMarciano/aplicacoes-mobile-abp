@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true">
+
+  <app-spinner *ngIf="loggingTracker"></app-spinner>
+  <div class="container">
+    <img src="../../assets/logo.png">
+    <div id="content" class="br-5">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+        <ion-item>
+          <ion-label position="stacked">Usuário:</ion-label>
+          <ion-input formControlName="user" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Senha:</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <ion-button color="primary" type="submit" [disabled]="!loginForm.valid" expand="block">Entrar</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>
