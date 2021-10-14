@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Cadastrar } from './cadastrar.page';
+import { PetFormComponent } from 'src/app/components/pet-form/pet-form.component';
 
 // import { HomePageRoutingModule } from './home-routing.module';
 
@@ -20,6 +21,9 @@ import { Cadastrar } from './cadastrar.page';
       }
     ])
   ],
-  declarations: [Cadastrar]
+  declarations: [
+    Cadastrar,
+    PetFormComponent
+  ]
 })
 export class CadastrarModule { }

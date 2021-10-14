@@ -4,6 +4,8 @@ ion-content{
 
 .header-page {
     display: flex;
+    min-height: 3rem;
+    align-items: center;
     // background-color: var(--ion-color-primary);
 
     ion-title,

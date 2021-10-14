@@ -1,0 +1,65 @@
+<form>
+  <ion-grid>
+    <ion-row>
+      <ion-col>Qual o pet?</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-radio-group value="dog" (ionChange)="changeTypeAnimal($event)">
+          <div class="radio-container">
+            <ion-item id="radio-dog" class="selected">
+              <ion-label color="light">Cachorro</ion-label>
+              <ion-radio name="radio-dog" slot="start" value="dog" checked></ion-radio>
+            </ion-item>
+            <ion-item id="radio-cat">
+              <ion-label for="teste" color="light">Gato</ion-label>
+              <ion-radio name="radio-cat" id="radio-cat" slot="start" value="cat"></ion-radio>
+            </ion-item>
+          </div>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Qual o sexo? </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-radio-group value="male" (ionChange)="changeTypeSex($event)">
+          <div class="radio-container">
+            <ion-item id="radio-sex-male" class="selected">
+              <ion-label color="light">Macho</ion-label>
+              <ion-radio name="radio-sex-male" slot="start" value="male"></ion-radio>
+            </ion-item>
+            <ion-item id="radio-sex-female">
+              <ion-label color="light">Fêmea</ion-label>
+              <ion-radio name="radio-sex-female" id="radio-cat" slot="start" value="female">
+              </ion-radio>
+            </ion-item>
+          </div>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>O pet tem nome?</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input class="input-blank" placeholder="Sem nome" class="input-blank"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Qual a raça?</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input class="input-blank" placeholder="Desconhecida"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button  type="submit" expand="block"> Salvar </ion-button>
+  
+  <ion-button color="danger" *ngIf="showDeleteButton" type="submit" expand="block">
+    Excluir
+  </ion-button>
+</form>

@@ -1,4 +1,16 @@
-<ion-header class="header-page">
-    <ion-menu-button menu="main-menu" autoHide="false"></ion-menu-button>
-    <ion-title>Meus pets</ion-title>
-</ion-header>
+<ion-content [fullscreen]="true">
+    <app-spinner *ngIf="loadingTracker"></app-spinner>
+
+    <ion-header class="header-page">
+        <ion-menu-button menu="main-menu" autoHide="false"></ion-menu-button>
+        <ion-title>Meus pets</ion-title>
+    </ion-header>
+   
+    <app-list-item (click)="openModal()" [teste]="teste2"></app-list-item>
+    <app-list-item [teste]="teste2"></app-list-item>
+    <app-list-item [teste]="teste2"></app-list-item>
+    <app-list-item [teste]="teste2"></app-list-item>
+    <app-list-item [teste]="teste2"></app-list-item>
+    <app-list-item [teste]="teste2"></app-list-item>
+    <app-list-item [teste]="teste2"></app-list-item>
+</ion-content>

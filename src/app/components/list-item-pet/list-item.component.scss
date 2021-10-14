@@ -1,0 +1,38 @@
+ion-card {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.875rem;
+
+    &:hover{
+        cursor:pointer;
+    }
+
+    ion-img {
+        margin-right: 0.875rem;
+    }
+
+    .pet-info-content {
+        
+        ion-label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .info-pet{
+            &.breed{
+                font-size: 12px;
+            }
+            font-weight: 400;
+        }
+
+        .genre{
+            width: 20px;
+            height: 20px;
+            right: 0;
+            top: 0;
+            margin-top: 0.875rem;
+            position: absolute;
+        }
+    }
+}

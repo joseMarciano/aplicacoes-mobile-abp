@@ -1,0 +1,73 @@
+ion-radio {
+    --color: var(--ion-color-primary-contrast);
+    --color-checked: var(--ion-color-primary-contrast);
+  }
+  
+  form {
+    padding-top: 1rem;
+    margin: 0 auto;
+    color: var(--ion-color-primary-contrast);
+    width: 85%;
+  
+  }
+  
+//   ion-button .btn-white {
+//     --color: red;
+//     --background: red;
+//   }
+
+
+  ion-button {
+    --color: var(--ion-color-primary-contrast);
+    --background: rgb(170, 97, 238);
+  }
+
+//   ion-button #btn-white{
+//     --color: var(--ion-color-danger-tint);
+//     --background: var(--ion-color-primary-contrast) !important;
+//   }
+  
+  .input-blank {
+    border-bottom: 1px solid var(--ion-color-primary-contrast);
+  }
+  
+  .btn-form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .radio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  
+    ion-item {
+      --background: var(--ion-color-primary);
+      --border-style: none;
+    }
+  
+    ion-item.selected {
+      --background: rgb(170, 97, 238);
+      --border-style: none;
+    }
+  
+    ion-radio {
+      margin: 0 0.75rem 0 0;
+    }
+  
+    ion-item {
+      border: 1px solid var(--ion-color-primary-contrast);
+      border-radius: 3px;
+      // padding: 1rem;
+      width: 45%;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      ion-label {
+        margin-right: 0.5rem;
+      }
+    }
+  }
