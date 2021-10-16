@@ -4,12 +4,17 @@ ion-content{
 
 .header-page {
     display: flex;
-    min-height: 3rem;
+    min-height: var(--height-header);
     align-items: center;
-    // background-color: var(--ion-color-primary);
+    position: fixed;
+    background-color: var(--ion-color-primary);
 
     ion-title,
     ion-menu-button {
         color: var(--ion-color-primary-contrast);
     }
+}
+
+.content {
+    margin-top: calc(var(--height-header) + 1rem);
 }

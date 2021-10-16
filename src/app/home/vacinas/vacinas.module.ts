@@ -4,6 +4,9 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Vacinas } from './vacinas.page';
+import { CardListItemComponentModule } from 'src/app/components/card-list-item-pet/card-list-item.module';
+import { SpinnerComponentModule } from 'src/app/components/spinner/spinner.module';
+import { ModalVacinaModule } from './modal-vacina/modal-vacina.module';
 
 // import { HomePageRoutingModule } from './home-routing.module';
 
@@ -13,6 +16,8 @@ import { Vacinas } from './vacinas.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    CardListItemComponentModule,
+    ModalVacinaModule,
     RouterModule.forChild([
       {
         path: '',

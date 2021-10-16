@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { ListItemComponent } from './list-item.component';
+import { CardListItemComponent } from './card-list-item.component';
 
 
 @NgModule({
@@ -9,9 +9,10 @@ import { ListItemComponent } from './list-item.component';
     CommonModule,
     IonicModule
   ],
-  declarations: [ListItemComponent]
+  declarations: [CardListItemComponent],
+  exports: [CardListItemComponent]
 })
-export class ListItemComponentModule {
+export class CardListItemComponentModule {
 
   constructor() {
   }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { ModalMedicamentoComponent } from './modal-medicamento/modal-medicamento.component';
 
 @Component({
   selector: 'app-medicamentos',
@@ -8,9 +9,16 @@ import { Router } from '@angular/router';
 })
 export class Medicamentos {
 
-  constructor(private router:Router) {
+  constructor(private modalController: ModalController) {
 
   }
 
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ModalMedicamentoComponent,
+    });
+    return await modal.present();
+  }
 
 }

@@ -13,15 +13,12 @@ export class MyPets {
   teste2 = "Bem loco"
 
   constructor(
-    // private router: Router,
     private modalController: ModalController
   ) { }
 
   async openModal() {
     const modal = await this.modalController.create({
       component: ModalPetComponent,
-    
-      // cssClass: 'my-custom-class'
     });
     return await modal.present();
   }

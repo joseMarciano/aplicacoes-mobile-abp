@@ -6,4 +6,10 @@
         <ion-title>Medicamentos</ion-title>
     </ion-header>
    
+
+    <div class="content">
+        <app-card-list-item *ngFor="let item of [1,2]" (click)="openModal()">
+        </app-card-list-item>
+    </div>
+
 </ion-content>

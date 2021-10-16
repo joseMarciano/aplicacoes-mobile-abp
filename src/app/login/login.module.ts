@@ -5,7 +5,6 @@ import { LoginPage } from './login.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SpinnerComponentModule } from '../components/spinner/spinner.module';
-import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 
 @NgModule({
@@ -14,6 +13,7 @@ import { SpinnerComponent } from '../components/spinner/spinner.component';
     IonicModule,
     ReactiveFormsModule,
     FormsModule,
+    SpinnerComponentModule,
     RouterModule.forChild([
       {
         path: '',
@@ -22,8 +22,7 @@ import { SpinnerComponent } from '../components/spinner/spinner.component';
     ])
   ],
   declarations: [
-    LoginPage,
-    SpinnerComponent
+    LoginPage
   ]
 })
 export class LoginPageModule {

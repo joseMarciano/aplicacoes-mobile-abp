@@ -4,6 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Medicamentos } from './medicamentos.page';
+import { CardListItemComponentModule } from 'src/app/components/card-list-item-pet/card-list-item.module';
+import { ModalMedicamentoModule } from './modal-medicamento/modal-medicamento.module';
 
 // import { HomePageRoutingModule } from './home-routing.module';
 
@@ -13,6 +15,8 @@ import { Medicamentos } from './medicamentos.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    CardListItemComponentModule,
+    ModalMedicamentoModule,
     RouterModule.forChild([
       {
         path: '',

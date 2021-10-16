@@ -4,9 +4,10 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MyPets } from './my-pets.page';
-import { ListItemComponent } from 'src/app/components/list-item-pet/list-item.component';
+import { CardListItemComponent } from 'src/app/components/card-list-item-pet/card-list-item.component';
 import { PetFormComponent } from 'src/app/components/pet-form/pet-form.component';
 import { ModalPetModule } from './modal-pet/modal-pet.module';
+import { CardListItemComponentModule } from 'src/app/components/card-list-item-pet/card-list-item.module';
 
 // import { HomePageRoutingModule } from './home-routing.module';
 
@@ -17,6 +18,7 @@ import { ModalPetModule } from './modal-pet/modal-pet.module';
     FormsModule,
     IonicModule,
     ModalPetModule,
+    CardListItemComponentModule,
     RouterModule.forChild([
       {
         path: '',
@@ -26,7 +28,6 @@ import { ModalPetModule } from './modal-pet/modal-pet.module';
   ],
   declarations: [
     MyPets,
-    ListItemComponent
   ]
 })
 export class MyPetsModule { }

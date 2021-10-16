@@ -11,7 +11,8 @@ import { SpinnerComponent } from './spinner.component';
     CommonModule,
     IonicModule
   ],
-  declarations: [SpinnerComponent]
+  declarations: [SpinnerComponent],
+  exports: [SpinnerComponent]
 })
 export class SpinnerComponentModule {
 

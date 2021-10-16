@@ -5,12 +5,9 @@
         <ion-menu-button menu="main-menu" autoHide="false"></ion-menu-button>
         <ion-title>Meus pets</ion-title>
     </ion-header>
-   
-    <app-list-item (click)="openModal()" [teste]="teste2"></app-list-item>
-    <app-list-item [teste]="teste2"></app-list-item>
-    <app-list-item [teste]="teste2"></app-list-item>
-    <app-list-item [teste]="teste2"></app-list-item>
-    <app-list-item [teste]="teste2"></app-list-item>
-    <app-list-item [teste]="teste2"></app-list-item>
-    <app-list-item [teste]="teste2"></app-list-item>
+
+    <div class="content">
+        <app-card-list-item *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]" (click)="openModal()" >
+        </app-card-list-item>
+    </div>
 </ion-content>
