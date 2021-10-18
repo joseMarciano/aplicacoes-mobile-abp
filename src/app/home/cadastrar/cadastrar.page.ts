@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -7,10 +8,19 @@ import { Router } from '@angular/router';
   templateUrl: 'cadastrar.page.html',
   styleUrls: ['cadastrar.page.scss', '../commom-style.page.scss'],
 })
-export class Cadastrar {
+export class Cadastrar implements OnInit {
 
 
-  constructor(private router: Router) { }
+  
+  constructor(private http: HttpClient) {
+    
+  }
 
+
+  ngOnInit(): void {
+    this.http.get('list-all').subscribe()
+  }
+
+  
 
 }

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_URL: 'http://localhost:3000/fake-api/pets/',
+  PROJECT_TOKEN: 'be38e598-6221-4b2c-a5b7-c7f13b23a715'
 };
 
 /*
