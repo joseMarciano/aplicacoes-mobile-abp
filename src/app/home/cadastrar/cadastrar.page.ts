@@ -18,7 +18,7 @@ export class Cadastrar implements OnInit {
 
 
   ngOnInit(): void {
-    this.http.get('list-all').subscribe()
+    // this.http.get('list-all').subscribe()
   }
 
   

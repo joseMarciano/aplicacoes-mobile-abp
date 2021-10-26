@@ -12,7 +12,7 @@
               <ion-radio name="radio-dog" slot="start" value="dog" checked></ion-radio>
             </ion-item>
             <ion-item id="radio-cat">
-              <ion-label for="teste" color="light">Gato</ion-label>
+              <ion-label color="light">Gato</ion-label>
               <ion-radio name="radio-cat" id="radio-cat" slot="start" value="cat"></ion-radio>
             </ion-item>
           </div>
@@ -33,6 +33,26 @@
             <ion-item id="radio-sex-female">
               <ion-label color="light">Fêmea</ion-label>
               <ion-radio name="radio-sex-female" id="radio-cat" slot="start" value="female">
+              </ion-radio>
+            </ion-item>
+          </div>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>É castrado? </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-radio-group value="true" (ionChange)="changeTypeCastrado($event)">
+          <div class="radio-container">
+            <ion-item id="radio-castrado-true" class="selected">
+              <ion-label color="light">Sim</ion-label>
+              <ion-radio name="radio-castrado-true" slot="start" value="true"></ion-radio>
+            </ion-item>
+            <ion-item id="radio-castrado-false">
+              <ion-label color="light">Não</ion-label>
+              <ion-radio name="radio-castrado-false" id="radio-cat" slot="start" value="false">
               </ion-radio>
             </ion-item>
           </div>
@@ -62,8 +82,8 @@
     </ion-row>
   </ion-grid>
 
-  <ion-button  type="submit" expand="block"> Salvar </ion-button>
-  
+  <ion-button type="submit" expand="block"> Salvar </ion-button>
+
   <ion-button color="danger" *ngIf="showDeleteButton" type="submit" expand="block">
     Excluir
   </ion-button>

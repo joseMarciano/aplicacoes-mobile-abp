@@ -13,6 +13,7 @@ export class PetFormComponent implements OnInit {
 
   private currentTypeAnimal = 'dog';
   private currentTypeSex = 'male';
+  private currentTypeCastrado = 'true';
 
 
   constructor() { }
@@ -29,6 +30,12 @@ export class PetFormComponent implements OnInit {
     event.currentTarget.querySelector(`#radio-sex-${this.currentTypeSex}`).classList.remove('selected');
     event.currentTarget.querySelector(`#radio-sex-${event.detail?.value}`).classList.add('selected');
     this.currentTypeSex = event.detail?.value;
+  }
+
+  public changeTypeCastrado(event) {
+    event.currentTarget.querySelector(`#radio-castrado-${this.currentTypeCastrado}`).classList.remove('selected');
+    event.currentTarget.querySelector(`#radio-castrado-${event.detail?.value}`).classList.add('selected');
+    this.currentTypeCastrado = event.detail?.value;
   }
 
 }

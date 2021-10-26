@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { IonItemSliding, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal-vacina',
@@ -8,13 +8,43 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalVacinaComponent implements OnInit {
 
-  
+  public vacinas = [
+    {
+      title: 'Vacina anti-pulgas',
+      description: 'Vacina forte para cachorros de médio porte',
+      dateNext: '10/05/2021',
+      important: true
+    },
+    {
+      title: 'Vacina anti-pulgas',
+      description: 'Vacina forte para cachorros de médio porte',
+      dateNext: '10/05/2021'
+    },
+    {
+      title: 'Vacina anti-pulgas',
+      description: 'Vacina forte para cachorros de médio porte',
+      dateNext: '10/05/2021',
+      important: true
+    },
+    {
+      title: 'Vacina anti-pulgas',
+      description: 'Vacina forte para cachorros de médio porte',
+      dateNext: '10/05/2021'
+    },
+  ];
+
   constructor(private modalController: ModalController) { }
 
-  ngOnInit() { 
+  ngOnInit() {
   }
 
-  async close(){
+  async close() {
     await this.modalController.dismiss();
+  }
+
+  async removeVacina($index, itemSlibind: IonItemSliding) {
+    await itemSlibind.closeOpened();
+    debugger
+    this.vacinas.splice($index, 1);
   }
 }

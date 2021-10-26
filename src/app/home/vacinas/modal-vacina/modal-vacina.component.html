@@ -4,8 +4,40 @@
     <ion-title>Registro de vacinas</ion-title>
     <ion-icon name="close-sharp" color="light" (click)="close()"></ion-icon>
   </ion-header>
-
   <div class="content">
-    LISTAGEM DE VACINAS
+
+    <ion-list lines="none">
+      <!-- Multi-line sliding item with icon options on both sides -->
+      <ion-item-sliding #slidingItem *ngFor="let vacina of vacinas; index as $index">
+        <ion-item >
+          <ion-label>
+            <h2 class="title-vacina">
+              {{vacina.title}}
+              <ion-badge *ngIf="vacina.important" color="warning">Importante</ion-badge>
+            </h2>
+           
+            <p>{{vacina.description}}</p>
+          </ion-label>
+          <ion-note slot="end">
+          {{vacina.dateNext}}
+          </ion-note>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="light">
+            <ion-icon slot="icon-only" color="primary" name="pencil-sharp"></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="danger" (click)="removeVacina($index,slidingItem)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+
   </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="light">
+      <ion-icon color="primary" name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
