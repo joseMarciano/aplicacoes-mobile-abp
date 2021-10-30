@@ -44,7 +44,6 @@ export class ModalVacinaComponent implements OnInit {
 
   async removeVacina($index, itemSlibind: IonItemSliding) {
     await itemSlibind.closeOpened();
-    debugger
     this.vacinas.splice($index, 1);
   }
 }

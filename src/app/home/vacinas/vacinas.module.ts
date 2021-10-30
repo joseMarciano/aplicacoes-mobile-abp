@@ -18,6 +18,7 @@ import { ModalVacinaModule } from './modal-vacina/modal-vacina.module';
     IonicModule,
     CardListItemComponentModule,
     ModalVacinaModule,
+    SpinnerComponentModule,
     RouterModule.forChild([
       {
         path: '',

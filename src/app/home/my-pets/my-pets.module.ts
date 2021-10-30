@@ -8,6 +8,7 @@ import { CardListItemComponent } from 'src/app/components/card-list-item-pet/car
 import { PetFormComponent } from 'src/app/components/pet-form/pet-form.component';
 import { ModalPetModule } from './modal-pet/modal-pet.module';
 import { CardListItemComponentModule } from 'src/app/components/card-list-item-pet/card-list-item.module';
+import { SpinnerComponentModule } from 'src/app/components/spinner/spinner.module';
 
 // import { HomePageRoutingModule } from './home-routing.module';
 
@@ -19,6 +20,7 @@ import { CardListItemComponentModule } from 'src/app/components/card-list-item-p
     IonicModule,
     ModalPetModule,
     CardListItemComponentModule,
+    SpinnerComponentModule,
     RouterModule.forChild([
       {
         path: '',

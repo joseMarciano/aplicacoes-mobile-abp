@@ -4,8 +4,7 @@
     <ion-title>Visualizar</ion-title>
     <ion-icon name="close-sharp" color="light" (click)="close()"></ion-icon>
   </ion-header>
-
   <div class="content">
-    <app-pet-form showDeleteButton="true"></app-pet-form>
+    <app-pet-form showDeleteButton="true" [(pet)]="pet" [closeModal]="close"></app-pet-form>
   </div>
 </ion-content>

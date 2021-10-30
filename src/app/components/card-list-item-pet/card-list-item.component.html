@@ -1,9 +1,10 @@
 <ion-card>
     <ion-img [src]="'../../../assets/icon/favicon.png'"></ion-img>
     <div class="pet-info-content">
-        <ion-label color="dark">Panqueca</ion-label>
-        <ion-label class="info-pet breed" color="dark">Felina</ion-label>
-        <ion-label class="info-pet">SRD (Vira lata) de 2 anos</ion-label>
-        <ion-img class="genre" [src]="'../../../assets/icon/mars.png'"></ion-img>
+        <ion-label color="dark">{{pet.name}}</ion-label>
+        <ion-label class="info-pet breed" color="dark">{{pet.breed}}</ion-label>
+        <ion-badge *ngIf="pet.castrated" color="warning">Castrado</ion-badge>
     </div>
+    <ion-img class="genre sex" [src]="urlSex"></ion-img>
+    <ion-img class="genre type" [src]="urlType"></ion-img>
 </ion-card>

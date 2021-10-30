@@ -1,13 +1,15 @@
-<form>
+<app-spinner *ngIf="loadingTracker"></app-spinner>
+
+<form [formGroup]="form">
   <ion-grid>
     <ion-row>
       <ion-col>Qual o pet?</ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-radio-group value="dog" (ionChange)="changeTypeAnimal($event)">
+        <ion-radio-group formControlName="type" (ionChange)="changeTypeAnimal($event)">
           <div class="radio-container">
-            <ion-item id="radio-dog" class="selected">
+            <ion-item id="radio-dog">
               <ion-label color="light">Cachorro</ion-label>
               <ion-radio name="radio-dog" slot="start" value="dog" checked></ion-radio>
             </ion-item>
@@ -24,9 +26,9 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-radio-group value="male" (ionChange)="changeTypeSex($event)">
+        <ion-radio-group formControlName="sex" (ionChange)="changeTypeSex($event)">
           <div class="radio-container">
-            <ion-item id="radio-sex-male" class="selected">
+            <ion-item id="radio-sex-male">
               <ion-label color="light">Macho</ion-label>
               <ion-radio name="radio-sex-male" slot="start" value="male"></ion-radio>
             </ion-item>
@@ -44,9 +46,9 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-radio-group value="true" (ionChange)="changeTypeCastrado($event)">
+        <ion-radio-group formControlName="castrated"  (ionChange)="changeTypeCastrado($event)">
           <div class="radio-container">
-            <ion-item id="radio-castrado-true" class="selected">
+            <ion-item id="radio-castrado-true">
               <ion-label color="light">Sim</ion-label>
               <ion-radio name="radio-castrado-true" slot="start" value="true"></ion-radio>
             </ion-item>
@@ -64,7 +66,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-input class="input-blank" placeholder="Sem nome" class="input-blank"></ion-input>
+        <ion-input class="input-blank" formControlName="name" placeholder="Sem nome" class="input-blank" required></ion-input>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -72,19 +74,19 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-input class="input-blank" placeholder="Desconhecida"></ion-input>
+        <ion-input class="input-blank" formControlName="breed" placeholder="Desconhecida" required></ion-input>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-input class="input-blank" type="file"></ion-input>
+        <!-- <ion-input class="input-blank" type="file"></ion-input> -->
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <ion-button type="submit" expand="block"> Salvar </ion-button>
+  <ion-button type="submit" expand="block" (click)="save()" [disabled]="form.invalid"> Salvar </ion-button>
 
-  <ion-button color="danger" *ngIf="showDeleteButton" type="submit" expand="block">
+  <ion-button color="danger" *ngIf="showDeleteButton" (click)="remove()" type="submit" expand="block">
     Excluir
   </ion-button>
 </form>

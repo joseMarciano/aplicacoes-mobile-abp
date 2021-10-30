@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-list-item',
@@ -6,11 +6,20 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'card-list-item.component.html'
 
 })
-export class CardListItemComponent {
+export class CardListItemComponent implements OnInit {
 
+  @Input()
+  public pet = {} as any;
 
+  public urlSex = '';
+  public urlType = '';
 
   constructor() {
   }
 
+
+  ngOnInit() {
+    this.urlSex = `../../../assets/icon/${this.pet.sex}.png`;
+    this.urlType = `../../../assets/icon/${this.pet.type}.png`;
+  }
 }

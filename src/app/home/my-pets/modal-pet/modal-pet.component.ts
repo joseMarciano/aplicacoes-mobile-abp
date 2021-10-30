@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -6,13 +6,15 @@ import { ModalController } from '@ionic/angular';
   templateUrl: './modal-pet.component.html',
   styleUrls: ['./modal-pet.component.scss', '../../commom-style.page.scss'],
 })
-export class ModalPetComponent implements OnInit {
+export class ModalPetComponent {
+
+
+  @Input()
+  public pet = {} as any;
 
   constructor(private modalController: ModalController) { }
 
-  ngOnInit() { }
-
-  async close(){
+  close = async () => {
     await this.modalController.dismiss();
   }
 }
