@@ -11,8 +11,7 @@ export class HomePage {
   public appPages = [
     { title: 'Meus pets', url: '/home/my-pets', icon: 'list-sharp' },
     { title: 'Cadastrar pet', url: '/home/cadastrar', icon: 'paw-sharp' },
-    { title: 'Vacinas', url: '/home/vacinas', icon: 'bandage-sharp' },
-    { title: 'Medicamentos', url: '/home/medicamentos', icon: 'medkit-sharp' }
+    { title: 'Vacinas', url: '/home/vacinas', icon: 'bandage-sharp' }
   ];
 
 

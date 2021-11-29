@@ -7,7 +7,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-radio-group formControlName="type" (ionChange)="changeTypeAnimal($event)">
+        <ion-radio-group #radioTypeAnimal formControlName="type" (ionChange)="changeTypeAnimal($event)">
           <div class="radio-container">
             <ion-item id="radio-dog">
               <ion-label color="light">Cachorro</ion-label>

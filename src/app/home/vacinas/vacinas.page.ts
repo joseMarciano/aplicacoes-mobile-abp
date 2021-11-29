@@ -40,9 +40,12 @@ export class Vacinas {
     );
   }
 
-  async openModal() {
+  async openModal(pet) {
     const modal = await this.modalController.create({
       component: ModalVacinaComponent,
+      componentProps: {
+        pet
+      }
     });
     return await modal.present();
   }

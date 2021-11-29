@@ -39,6 +39,8 @@ export class MyPets implements OnInit {
       () => this.loadingTracker = false
     );
   }
+
+  
   async openModal(pet) {
     const modal = await this.modalController.create({
       component: ModalPetComponent,

@@ -7,6 +7,7 @@ import { Vacinas } from './vacinas.page';
 import { CardListItemComponentModule } from 'src/app/components/card-list-item-pet/card-list-item.module';
 import { SpinnerComponentModule } from 'src/app/components/spinner/spinner.module';
 import { ModalVacinaModule } from './modal-vacina/modal-vacina.module';
+import { ModalVacinaNewModule } from './modal-vacina/modal-vacina-new/modal-vacina-new.module';
 
 // import { HomePageRoutingModule } from './home-routing.module';
 
@@ -18,6 +19,7 @@ import { ModalVacinaModule } from './modal-vacina/modal-vacina.module';
     IonicModule,
     CardListItemComponentModule,
     ModalVacinaModule,
+    ModalVacinaNewModule,
     SpinnerComponentModule,
     RouterModule.forChild([
       {

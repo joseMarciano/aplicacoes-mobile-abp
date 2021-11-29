@@ -1,0 +1,92 @@
+ion-icon {
+  font-size: 1.75rem;
+  width: 3rem;
+}
+
+ion-list {
+  padding: 0;
+  background: var(--ion-color-primary);
+
+  ion-item-sliding {
+    margin-bottom: 0.2rem;
+  }
+
+  .title-vacina {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+ion-radio {
+  --color: var(--ion-color-primary-contrast);
+  --color-checked: var(--ion-color-primary-contrast);
+}
+
+form {
+  margin: 0 auto;
+  color: var(--ion-color-primary-contrast);
+  width: 85%;
+}
+
+ion-button {
+  --color: var(--ion-color-primary-contrast);
+  --background: rgb(170, 97, 238);
+}
+
+.input-blank {
+  border-bottom: 1px solid var(--ion-color-primary-contrast);
+}
+
+.btn-form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  ion-item {
+    --background: var(--ion-color-primary);
+    --border-style: none;
+  }
+
+  ion-item.selected {
+    --background: rgb(170, 97, 238);
+    --border-style: none;
+  }
+
+  ion-radio {
+    margin: 0 0.75rem 0 0;
+  }
+
+  ion-item {
+    border: 1px solid var(--ion-color-primary-contrast);
+    border-radius: 3px;
+    // padding: 1rem;
+    width: 45%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-label {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+ion-menu.md ion-item.selected {
+  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+}
+
+ion-menu.md ion-item.selected ion-icon {
+  color: var(--ion-color-primary);
+}
+
+ion-menu.md ion-item ion-icon {
+  color: #616e7e;
+}

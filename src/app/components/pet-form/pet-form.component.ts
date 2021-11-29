@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   templateUrl: './pet-form.component.html',
   styleUrls: ['./pet-form.component.scss'],
 })
-export class PetFormComponent implements OnInit {
+export class PetFormComponent implements OnInit, AfterViewInit {
 
   @Input()
   public pet = null;
@@ -33,13 +33,6 @@ export class PetFormComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.currentTypeCastrado = this.pet?.castrated === false ? 'false' : 'true';
-    this.currentTypeAnimal = this.pet?.type || 'dog';
-    this.currentTypeSex = this.pet?.sex || 'male';
-
-    this.addClassSelected(`#radio-${this.currentTypeAnimal}`);
-    this.addClassSelected(`#radio-sex-${this.currentTypeSex}`);
-    this.addClassSelected(`#radio-castrado-${this.currentTypeCastrado}`);
 
     this.form = new FormGroup({
       type: new FormControl(this.pet?.type || 'dog'),
@@ -51,6 +44,16 @@ export class PetFormComponent implements OnInit {
       medicaments: new FormControl(this.pet?.medicaments || [])
     });
 
+  }
+
+  ngAfterViewInit(){
+    this.currentTypeCastrado = this.pet?.castrated === false ? 'false' : 'true';
+    this.currentTypeAnimal = this.pet?.type || 'dog';
+    this.currentTypeSex = this.pet?.sex || 'male';
+
+    this.addClassSelected(`#radio-${this.currentTypeAnimal}`);
+    this.addClassSelected(`#radio-sex-${this.currentTypeSex}`);
+    this.addClassSelected(`#radio-castrado-${this.currentTypeCastrado}`);
   }
 
   public save() {
@@ -66,6 +69,8 @@ export class PetFormComponent implements OnInit {
     observable.subscribe(
       (res) => {
         if (!!this.closeModal) return this.closeModal();
+        
+        this.pet = null;
 
         this.router.navigate(['home','my-pets']);
 
@@ -87,7 +92,10 @@ export class PetFormComponent implements OnInit {
     );
   }
 
-  private addClassSelected = (id: string) => document.querySelector(id).classList.add('selected');
+  private addClassSelected = (id: string) => {
+    document.querySelector(id).classList.value = '';
+    document.querySelector(id).classList.value = 'selected';
+  }
 
   public changeTypeAnimal(event) {
     event.currentTarget.querySelector(`#radio-${this.currentTypeAnimal}`).classList.remove('selected');

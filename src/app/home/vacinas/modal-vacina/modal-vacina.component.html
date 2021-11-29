@@ -8,22 +8,22 @@
 
     <ion-list lines="none">
       <!-- Multi-line sliding item with icon options on both sides -->
-      <ion-item-sliding #slidingItem *ngFor="let vacina of vacinas; index as $index">
+      <ion-item-sliding #slidingItem *ngFor="let vaccine of pet.vaccines; index as $index">
         <ion-item >
           <ion-label>
             <h2 class="title-vacina">
-              {{vacina.title}}
-              <ion-badge *ngIf="vacina.important" color="warning">Importante</ion-badge>
+              {{vaccine.title}}
+              <ion-badge *ngIf="vaccine.important" color="warning">Importante</ion-badge>
             </h2>
            
-            <p>{{vacina.description}}</p>
+            <p>{{vaccine.description}}</p>
           </ion-label>
           <ion-note slot="end">
-          {{vacina.dateNext}}
+          {{formatVaccine(vaccine.dateNext)}}
           </ion-note>
         </ion-item>
         <ion-item-options side="end">
-          <ion-item-option color="light">
+          <ion-item-option color="light" (click)="openModal($index,vaccine)">
             <ion-icon slot="icon-only" color="primary" name="pencil-sharp"></ion-icon>
           </ion-item-option>
           <ion-item-option color="danger" (click)="removeVacina($index,slidingItem)">
@@ -32,10 +32,8 @@
         </ion-item-options>
       </ion-item-sliding>
     </ion-list>
-
-
   </div>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="openModal()">
     <ion-fab-button color="light">
       <ion-icon color="primary" name="add"></ion-icon>
     </ion-fab-button>

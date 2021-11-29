@@ -39,12 +39,7 @@ import { SpinnerComponentModule } from '../components/spinner/spinner.module';
             path: 'vacinas',
             loadChildren: () => import('./vacinas/vacinas.module').then(m => m.VacinasModule),
             pathMatch: 'full'
-          },
-          {
-            path: 'medicamentos',
-            loadChildren: () => import('./medicamentos/medicamentos.module').then(m => m.MedicamentosModule),
-            pathMatch: 'full'
-          },
+          }
         ]
       }
     ])

@@ -7,7 +7,7 @@
     </ion-header>
 
     <div class="content">
-        <app-card-list-item *ngFor="let pet of pets" [pet]="pet" (click)="openModal()">
+        <app-card-list-item *ngFor="let pet of pets" [pet]="pet" (click)="openModal(pet)">
         </app-card-list-item>
     </div>
 </ion-content>

@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="true">
+  <app-spinner *ngIf="loadingTracker"></app-spinner>
+  <ion-header class="header-page">
+    <ion-title>Adiciona vacina</ion-title>
+    <ion-icon name="close-sharp" color="light" (click)="close()"></ion-icon>
+  </ion-header>
+
+  <div class="content">
+
+    <form [formGroup]="formVacina">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Importante? </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-radio-group formControlName="important" (ionChange)="changeTypeImportant($event)">
+              <div class="radio-container">
+                <ion-item id="radio-important-true">
+                  <ion-label color="light">Sim</ion-label>
+                  <ion-radio name="radio-important-true" slot="start" value="true"></ion-radio>
+                </ion-item>
+                <ion-item id="radio-important-false">
+                  <ion-label color="light">Não</ion-label>
+                  <ion-radio name="radio-important-false" id="radio-cat" slot="start" value="false">
+                  </ion-radio>
+                </ion-item>
+              </div>
+            </ion-radio-group>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Título</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input class="input-blank" formControlName="title" required></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Descrição</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input class="input-blank" formControlName="description" required></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Data</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-datetime min="1990-02" formControlName="dateNext" required
+              dayShortNames="domingo,segunda-feira,terça-feira,quarta-feira,quinta-feira,sexta-feira,sábado"
+              displayFormat="DDD, DD MMM, YYYY"
+              monthShortNames="jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez"></ion-datetime>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <ion-button  expand="block" (click)="save()" [disabled]="formVacina.invalid"> Salvar </ion-button>
+
+    </form>
+  </div>
+
+
+</ion-content>

@@ -10,7 +10,7 @@ export class ModalPetComponent {
 
 
   @Input()
-  public pet = {} as any;
+  public pet = null as any;
 
   constructor(private modalController: ModalController) { }
 

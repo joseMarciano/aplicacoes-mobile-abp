@@ -10,22 +10,11 @@ ion-radio {
   
   }
   
-//   ion-button .btn-white {
-//     --color: red;
-//     --background: red;
-//   }
-
-
   ion-button {
     --color: var(--ion-color-primary-contrast);
     --background: rgb(170, 97, 238);
   }
 
-//   ion-button #btn-white{
-//     --color: var(--ion-color-danger-tint);
-//     --background: var(--ion-color-primary-contrast) !important;
-//   }
-  
   .input-blank {
     border-bottom: 1px solid var(--ion-color-primary-contrast);
   }
